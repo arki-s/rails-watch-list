@@ -24,7 +24,9 @@
 <div class="item card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= list.photo.attached? ? cl_image_path(list.photo.key) : '' %>)">
 <h1 class="card-title"><%= list.name %></h1>
 <p></p>
-<%= link_to "Go!", list_path(list), class:"btn btn-outline-info" %>
+<%= link_to "", list_path(list) do%>
+<i class="fa-sharp fa-solid fa-water-arrow-down" style="color: #5c9aff;"></i>
+<% end %>
 </div>
 <% end %>
 </div>
