@@ -11,7 +11,7 @@ Rails.application.routes.draw do
   # get 'lists/:id/edit', to: 'lists#edit', as: :edit_list
   # patch 'lists/:id', to: 'lists#update'
   # delete 'lists/:id', to: 'lists#destroy'
-
+  root "lists#pages"
   resources :lists, only:[:index, :new, :show, :create] do
     resources :bookmarks, only: [:new, :create]
     # lists/1/bookmarks/new
