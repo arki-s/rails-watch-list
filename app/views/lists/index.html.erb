@@ -19,18 +19,28 @@
 
 <h1 class="text-center p-3 m-3 fw-bold">Choose the type of world you want to dive into!</h1>
 
-<div class="container">
-<div class="cards">
-<% @lists.each do |list| %>
 
-<%= cl_image_tag list.photo.key, height: 300, width: 400, crop: :fill %>
-<div class="card m-3" style="width: 18rem;">
-  <div class="card-body text-center">
-    <h1 class="card-title"><%= list.name %></h1>
-    <p></p>
-    <%= link_to "Go!", list_path(list), class:"btn btn-outline-info" %>
-  </div>
+<div class="container">
+<% @lists.each do |list| %>
+<div class="item card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= list.photo.attached? ? cl_image_path(list.photo.key) : '../../app/assets/images/nekochan.png' %>)">
+<h1 class="card-title"><%= list.name %></h1>
+<%= link_to "Go!", list_path(list), class:"btn btn-outline-info" %>
 </div>
 <% end %>
 </div>
-</div>
+
+
+<%# <div class="container"> %>
+<%# <div class="cards"> %>
+<%# <% @lists.each do |list| %>
+<%# <div class="card m-3" style="width: 18rem;"> %>
+  <%# <div class="card-body text-center"> %>
+  <%# <%= cl_image_tag list.photo.key, crop: :fill %>
+    <%# <h1 class="card-title"><%= list.name %>
+    <%# <p></p> %>
+    <%# <%= link_to "Go!", list_path(list), class:"btn btn-outline-info" %>
+  <%# </div> %>
+<%# </div> %>
+<%# <% end %>
+<%# </div> %>
+<%# </div> %>
