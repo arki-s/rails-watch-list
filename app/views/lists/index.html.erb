@@ -19,8 +19,6 @@
 
 <h1 class="text-center p-3 m-3 fw-bold">Choose the type of world you want to dive into!</h1>
 
-
-<div class="container">
 <div class="cards">
 <% @lists.each do |list| %>
 <div class="item card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= list.photo.attached? ? cl_image_path(list.photo.key) : '../../app/assets/images/nekochan.png' %>)">
@@ -30,7 +28,7 @@
 </div>
 <% end %>
 </div>
-</div>
+
 
 
 <%# <div class="container"> %>
