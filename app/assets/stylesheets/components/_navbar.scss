@@ -1,0 +1,30 @@
+// .navbar-lewagon {
+//   justify-content: space-between;
+//   background: white;
+// }
+
+.navbar-lewagon .navbar-collapse {
+  flex-grow: 0;
+}
+
+.navbar-lewagon .navbar-brand img {
+  width: 40px;
+}
+
+
+.navbar-lewagon {
+  top:0;
+  background-color: transparent;
+  width: 100%;
+  z-index: 1;
+  // position: fixed;
+  justify-content: space-between;
+  transition: 0.5s background-color ease;
+}
+
+.navbar-lewagon-white {
+  // width: 100%;
+  // position: fixed;
+  justify-content: space-between;
+  background-color: white;
+}

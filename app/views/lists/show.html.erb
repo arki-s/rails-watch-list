@@ -1,0 +1,27 @@
+<%= render 'layouts/navbar2' %>
+
+<div class="container">
+
+<h1>List name</h1>
+<h2><%= @list.name %></h2>
+<p></p>
+<h1>Bookmarks</h1>
+<% if @list.bookmarks.exists?%>
+<% @list.bookmarks.each do |bookmark|%>
+<h2><%= bookmark.movie.title %></h2>
+<h3><%= bookmark.comment %></h3>
+<p></p>
+<%= link_to "Remove this Bookmark", bookmark_path(bookmark), data: {turbo_method: :delete, turbo_confirm: "Are you sure?😢"}%>
+<p></p>
+<% end %>
+<% else %>
+<h2>Empty! 🤪</h2>
+<% end %>
+
+<p></p>
+
+<%= link_to "Add Bookmark", new_list_bookmark_path(@list) %>
+<p></p>
+<%= link_to "Back to List", lists_path %>
+
+</div>
