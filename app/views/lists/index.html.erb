@@ -23,7 +23,7 @@
 <div class="cards">
 <% @lists.each do |list| %>
 
-
+<%= cl_image_tag list.photo.key, height: 300, width: 400, crop: :fill %>
 <div class="card m-3" style="width: 18rem;">
   <div class="card-body text-center">
     <h1 class="card-title"><%= list.name %></h1>
