@@ -10,3 +10,10 @@
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
+
+
+.container-show {
+  width: 600px;
+  text-align: center;
+  background-image: url("../images/water.jpg");
+}
