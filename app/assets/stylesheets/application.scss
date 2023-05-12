@@ -13,8 +13,23 @@
 
 
 .container-show {
-  margin:auto;
+  margin: auto;
   width: 600px;
   text-align: center;
   background-image: url("../images/water.jpg");
+}
+
+// a {
+//   all:unset;
+
+// }
+
+// a:hover {
+//   all:unset;
+
+// }
+
+.card-icon {
+  cursor: pointer;
+
 }

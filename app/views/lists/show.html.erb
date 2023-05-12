@@ -1,46 +1,37 @@
-
 <%= render 'layouts/navbar2' %>
-
 <div class="container-show">
-
-<h1>List name</h1>
-<h2><%= @list.name %></h2>
-<p></p>
-<h1>Bookmarks</h1>
-
-<% if @list.bookmarks.exists?%>
-<% @list.bookmarks.each do |bookmark|%>
-<div class="card" style="width: 18rem;">
-  <img src="<%= bookmark.movie.poster_url %>" class="card-img-top" alt="poster-image">
-  <div class="card-body">
-    <h5 class="card-title"><%= bookmark.movie.title %></h5>
-    <p class="card-text"><%= bookmark.comment %></p>
-    <%= link_to "Remove this Bookmark", bookmark_path(bookmark), data: {turbo_method: :delete, turbo_confirm: "Are you sure?😢"}, class:"btn btn-primary"%>
-    <%# <a href="#" class="btn btn-primary">Go somewhere</a> %>
+  <h1>List name</h1>
+  <h2><%= @list.name %></h2>
+  <p></p>
+  <h1>Bookmarks</h1>
+  <% if @list.bookmarks.exists?%>
+    <% @list.bookmarks.each do |bookmark|%>
+      <div class="card" style="width: 18rem;">
+        <img src="<%= bookmark.movie.poster_url %>" class="card-img-top" alt="poster-image">
+        <div class="card-body">
+          <h5 class="card-title"><%= bookmark.movie.title %></h5>
+          <p class="card-text"><%= bookmark.comment %></p>
+          <%= link_to "Remove this Bookmark", bookmark_path(bookmark), data: {turbo_method: :delete, turbo_confirm: "Are you sure?😢"}, class:"btn btn-primary"%>
+          <%# <a href="#" class="btn btn-primary">Go somewhere</a> %>
+        </div>
+      </div>
+    <% end %>
+  <% else %>
+    <h2>Empty! 🤪</h2>
+  <% end %>
+  <%# <% if @list.bookmarks.exists?%>
+  <%# <% @list.bookmarks.each do |bookmark|%>
+    <%# <h2><%= bookmark.movie.title %>
+    <%# <h3><%= bookmark.comment %>
+    <%# <p></p> %>
+    <%# <%= link_to "Remove this Bookmark", bookmark_path(bookmark), data: {turbo_method: :delete, turbo_confirm: "Are you sure?😢"}%>
+    <%# <p></p> %>
+    <%# <% end %>
+    <%# <% else %>
+    <%# <h2>Empty! 🤪</h2> %>
+    <%# <% end %>
+    <p></p>
+    <%= link_to "Add Bookmark", new_list_bookmark_path(@list) %>
+    <p></p>
+    <%= link_to "Back to List", lists_path %>
   </div>
-</div>
-<% end %>
-<% else %>
-<h2>Empty! 🤪</h2>
-<% end %>
-
-
-<%# <% if @list.bookmarks.exists?%>
-<%# <% @list.bookmarks.each do |bookmark|%>
-<%# <h2><%= bookmark.movie.title %>
-<%# <h3><%= bookmark.comment %>
-<%# <p></p> %>
-<%# <%= link_to "Remove this Bookmark", bookmark_path(bookmark), data: {turbo_method: :delete, turbo_confirm: "Are you sure?😢"}%>
-<%# <p></p> %>
-<%# <% end %>
-<%# <% else %>
-<%# <h2>Empty! 🤪</h2> %>
-<%# <% end %>
-
-<p></p>
-
-<%= link_to "Add Bookmark", new_list_bookmark_path(@list) %>
-<p></p>
-<%= link_to "Back to List", lists_path %>
-
-</div>

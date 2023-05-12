@@ -1,5 +1,4 @@
 <%= render 'layouts/navbar' %>
-
 <div class="banner">
   <div class="container">
     <h1>Dive into</h1>
@@ -8,41 +7,36 @@
     <%# <a class="btn btn-flat" href="#">Apply now</a> %>
   </div>
 </div>
-
 <%# <% @lists.each do |list| %>
-<%# <div class="cards"> %>
+  <%# <div class="cards"> %>
   <%# <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)"> %>
-    <%# <%= list.name %>
-    <%# <%= link_to "", list_path(list)%>
+  <%# <%= list.name %>
+  <%# <%= link_to "", list_path(list)%>
   <%# </div> %>
-<%# <% end %>
-
-<h1 class="text-center p-3 m-3 fw-bold">Choose the type of world you want to dive into!</h1>
-
-<div class="cards">
-<% @lists.each do |list| %>
-<div class="item card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= list.photo.attached? ? cl_image_path(list.photo.key) : '' %>)">
-<h1 class="card-title"><%= list.name %></h1>
-<br>
-<%= link_to "Dive!", list_path(list) %>
-<%# <i class="fa-duotone fa-water-arrow-down" style="--fa-primary-color: #0400ff; --fa-secondary-color: #2e7bff;"></i> %>
-</div>
-<% end %>
-</div>
-
-
-
-<%# <div class="container"> %>
-<%# <div class="cards"> %>
-<%# <% @lists.each do |list| %>
-<%# <div class="card m-3" style="width: 18rem;"> %>
-  <%# <div class="card-body text-center"> %>
-  <%# <%= cl_image_tag list.photo.key, crop: :fill %>
+  <%# <% end %>
+  <h1 class="text-center p-3 m-3 fw-bold">Choose the type of world you want to dive into!</h1>
+  <div class="cards">
+    <% @lists.each do |list| %>
+      <div class="item card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= list.photo.attached? ? cl_image_path(list.photo.key) : '' %>)">
+        <h1 class="card-title"><%= list.name %></h1>
+        <br>
+        <%= link_to list_path(list), class: "card-icon move-icon" do  %>
+          <i class="fa-solid fa-fish card-icon"></i>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+  <%# <div class="container"> %>
+  <%# <div class="cards"> %>
+  <%# <% @lists.each do |list| %>
+    <%# <div class="card m-3" style="width: 18rem;"> %>
+    <%# <div class="card-body text-center"> %>
+    <%# <%= cl_image_tag list.photo.key, crop: :fill %>
     <%# <h1 class="card-title"><%= list.name %>
     <%# <p></p> %>
     <%# <%= link_to "Go!", list_path(list), class:"btn btn-outline-info" %>
-  <%# </div> %>
-<%# </div> %>
-<%# <% end %>
-<%# </div> %>
-<%# </div> %>
+    <%# </div> %>
+    <%# </div> %>
+    <%# <% end %>
+    <%# </div> %>
+    <%# </div> %>

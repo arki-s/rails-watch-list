@@ -1,11 +1,10 @@
 <%= render 'layouts/navbar2' %>
-
 <div class="container-show">
-<h1>New bookmark</h1>
-<%= simple_form_for [@list, @bookmark] do |f| %>
-  <%= f.association :movie %>
-  <%= f.input :comment %>
-  <%= f.submit "Bookmark!" %>
-<% end %>
-
+  <h1>New bookmark</h1>
+  <%= simple_form_for [@list, @bookmark] do |f| %>
+    <%= f.association :movie, prompt: 'Choose a movie'%>
+    <%= f.input :comment %>
+    <%= f.submit "Bookmark!" %>
+  <% end %>
+  <%= link_to "Back", list_path(@list) %>
 </div>
