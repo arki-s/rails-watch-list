@@ -21,6 +21,7 @@
 
 
 <div class="container">
+<div class="cards">
 <% @lists.each do |list| %>
 <div class="item card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= list.photo.attached? ? cl_image_path(list.photo.key) : '../../app/assets/images/nekochan.png' %>)">
 <h1 class="card-title"><%= list.name %></h1>
@@ -28,6 +29,7 @@
 <%= link_to "Go!", list_path(list), class:"btn btn-outline-info" %>
 </div>
 <% end %>
+</div>
 </div>
 
 
