@@ -23,10 +23,9 @@
 <% @lists.each do |list| %>
 <div class="item card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= list.photo.attached? ? cl_image_path(list.photo.key) : '' %>)">
 <h1 class="card-title"><%= list.name %></h1>
-<p></p>
-<%= link_to "", list_path(list) do%>
-<i class="fa-sharp fa-solid fa-water-arrow-down" style="color: #5c9aff;"></i>
-<% end %>
+<br>
+<%= link_to "Dive!", list_path(list) %>
+<%# <i class="fa-duotone fa-water-arrow-down" style="--fa-primary-color: #0400ff; --fa-secondary-color: #2e7bff;"></i> %>
 </div>
 <% end %>
 </div>
